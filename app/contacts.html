@@ -19,23 +19,55 @@
 	<div class="wrapper">
 
 		<header class="header">
-			<div class="header__sidebar">
+			<div class="container">
+							<div class="header__sidebar">
 				<a href="/" class="header__logo">
 					<img src="img/logo.svg" alt="">
 				</a>
 				<nav class="header__sidebar_nav">
-					<ul class="header__sidebar_menu">
-						<li class="header__sidebar_submenu">
-							<a href="javascript: void(0)">RUS</a>
+					<ul class="header__nav_menu">
+						<li><a href="#"><span>Главная</span></a></li>
+						<li class="header__nav_submenu">
+							<a href="#"><span>Категории</span></a>
 							<ul>
-								<li><a href="#">ENG</a></li>
-								<li><a href="#">ENG</a></li>
-								<li><a href="#">ENG</a></li>
-								<li><a href="#">ENG</a></li>
+								<li><a href="#">Категории</a></li>
+								<li><a href="#">Категории</a></li>
+								<li><a href="#">Категории</a></li>
+								<li><a href="#">Категории</a></li>
+								<li><a href="#">Категории</a></li>
+								<li><a href="#">Категории</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Регистрация</a></li>
-						<li><a href="#">Вход</a></li>
+						<li><a href="#"><span>Услуги</span></a></li>
+						<li><a href="#"><span>Правила</span></a></li>
+						<li><a href="#"><span>Отзывы</span></a></li>
+						<li><a href="#"><span>Контакты</span></a></li>
+
+					</ul>
+					<form class="header__nav_search">
+						<div>
+							<label for="header__search"></label>
+							<input id="header__search" type="search" placeholder="Поиск">
+						</div>
+						<!-- <button>Search</button> -->
+					</form>
+					<div class="header__lang">
+						<a href="#" class="header__lang_link">
+							<img src="img/header_telegram.svg" alt="">
+						</a>
+						<a href="#" class="header__lang_link">
+							<img src="img/header_telegram.svg" alt="">
+						</a>
+					</div>
+					<ul class="header__sidebar_menu">
+						<li class="header__sidebar_submenu">
+							<a href="javascript: void(0)">RU</a>
+							<ul>
+								<li><a href="#">EN</a></li>
+							</ul>
+						</li>
+						<li><a href="#" class="header__sidebar_log"><span>Вход</span></a></li>
+						<li><a href="#" class="header__sidebar_reg"><span>Регистрация</span></a></li>
 					</ul>
 					<button class="hamburger" type="button">
 						<span class="hamburger__item"></span>
@@ -43,38 +75,13 @@
 				</nav>
 			</div>
 
-			<nav class="header__nav">
+			<nav class="header__nav menu">
 				<div class="header__nav--mobile_header">
 					<p class="header__nav--mobile_title">Меню</p>
 					<button class="hamburger hamburger--active" type="button">
 						<span class="hamburger__item"></span>
 					</button>
 				</div>
-				<ul class="header__nav_menu">
-					<li><a href="#">Главная</a></li>
-					<li><a href="#">Отзывы</a></li>
-					<li><a href="#">Правила</a></li>
-					<li><a href="#">Контакты</a></li>
-					<li><a href="#">Услуги</a></li>
-					<li class="header__nav_submenu">
-						<a href="#">Категории</a>
-						<ul>
-							<li><a href="#">БИЗНЕС</a></li>
-							<li><a href="#">НА ОДНО ИМЯ</a></li>
-							<li><a href="#">HOT</a></li>
-							<li><a href="#">US</a></li>
-							<li><a href="#">E-WALLETS</a></li>
-							<li><a href="#">Cryptocurrency exchanges</a></li>
-						</ul>
-					</li>
-				</ul>
-				<form class="header__nav_search">
-					<div>
-						<label for="header__search"></label>
-						<input id="header__search" type="search">
-					</div>
-					<button>Search</button>
-				</form>
 				<ul class="header__nav--mobile_sidebar header__sidebar_menu">
 					<li class="header__sidebar_submenu">
 						<a href="javascript: void(0)">RUS</a>
@@ -85,17 +92,15 @@
 							<li><a href="#">ENG</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Регистрация</a></li>
 					<li><a href="#">Вход</a></li>
+					<li><a href="#">Регистрация</a></li>
 				</ul>
 			</nav>
-
-			<div class="header__label">
-				<p>Добро пожаловать к нам на сайт!</p>
 			</div>
+
 		</header>
 	
-		<main class="main">
+		<main class="main container">
 
 			<aside class="main__sidebar sidebar">
 				<div class="sidebar__block">
@@ -184,7 +189,6 @@
 						<img src="img/contacts__map.jpg" alt="">
 					</div>
 
-					<p class="contacts__subtitle">Наши контакты:</p>
 					<div class="contacts__desc">
 						<p class="contacts__desc_item">
 							<img src="img/contacts__desc_email.svg" alt="">
@@ -192,17 +196,17 @@
 							<a href="mailto:Black_Gross@tutanota.com">Black_Gross@tutanota.com</a>
 						</p>
 						<p class="contacts__desc_item">
-							<img src="img/contacts__desc_tel.svg" alt="">
+							<img src="img/header_telegram.svg" alt="">
 							<span>Телеграм: </span> 
 							<a href="#">Black_Gross@tutanota.com</a>
 						</p>
 						<p class="contacts__desc_item">
-							<img src="img/contacts__desc_tel.svg" alt="">
+							<img src="img/header_telegram.svg" alt="">
 							<span>Телеграм канал: </span> 
 							<a href="https://t.me/joinchat/AAAAAEtD48G30cM2ZBZjyA" target="_blank">https://t.me/joinchat/AAAAAEtD48 G30cM2ZBZjyA</a>
 						</p>
 						<p class="contacts__desc_item">
-							<img src="img/contacts__desc_tel.svg" alt="">
+							<img src="img/header_telegram.svg" alt="">
 							<span>Телеграм бот: </span>
 							<a href="#">@Black_Gross_bot</a>
 						</p>
@@ -219,34 +223,33 @@
 		</main>
 	
 		<footer class="footer">
-			<a href="/" class="footer__logo">
-				<img src="img/logo.svg" alt="">
-			</a>
+			<div class="footer__container container">
+				<a href="/" class="footer__logo">
+					<img src="img/logo.svg" alt="">
+				</a>
 
-			<nav class="footer__nav">
-				<ul class="footer__nav_menu">
-					<li><a href="#">Главная</a></li>
-					<li><a href="#">Отзывы</a></li>
-					<li><a href="#">Правила</a></li>
-					<li><a href="#">Контакты</a></li>
-					<li><a href="#">Услуги</a></li>
-					<li><a href="#">Категории</a></li>
-				</ul>
-			</nav>
-
-			<nav class="footer__sidebar_nav">
-				<ul class="footer__sidebar_menu">
-					<li class="footer__sidebar_submenu">
-						<a href="javascript: void(0)">RUS</a>
-						<ul>
-							<li><a href="#">ENG</a></li>
-							<li><a href="#">ENG</a></li>
-							<li><a href="#">ENG</a></li>
-							<li><a href="#">ENG</a></li>
+				<div class="footer__menu">
+					<nav class="footer__nav">
+						<ul class="footer__nav_menu">
+							<li><a href="#"><span>Главная</span></a></li>
+							<li><a href="#"><span>Категории</span></a></li>
+							<li><a href="#"><span>Услуги</span></a></li>
+							<li><a href="#"><span>Правила</span></a></li>
+							<li><a href="#"><span>Отзывы</span></a></li>
+							<li><a href="#"><span>Контакты</span></a></li>
 						</ul>
-					</li>
-				</ul>
-			</nav> 
+					</nav>
+				
+					<ul class="header__sidebar_menu footer__sidebar_menu">
+						<li><a href="#" class="header__sidebar_log"><span>Вход</span></a></li>
+						<li><a href="#" class="header__sidebar_reg"><span>Регистрация</span></a></li>
+					</ul>
+				</div>
+		
+
+		
+			</div>
+		
 		</footer>
 
 	</div>

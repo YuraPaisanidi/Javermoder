@@ -32,7 +32,7 @@
 	// padding: 0 15px
 	// margin: 0 auto
 	display: grid
-	grid-template: minmax(100px, auto) 1fr minmax(100px, auto) / 1fr
+	grid-template: minmax(60px, auto) 1fr minmax(100px, auto) / 1fr
 	grid-template-areas: 'header' 'main' 'footer'
 	grid-gap: 50px
 	overflow: hidden
@@ -64,7 +64,7 @@
 	display: flex
 	justify-content: center
 	align-items: center
-	min-height: 60px
+	min-height: 50px
 	max-width: 300px
 	width: 100%
 	border: 3px solid transparent
@@ -177,6 +177,7 @@
 	// grid-template: 1fr minmax(100px, auto) minmax(60px, auto) / 1fr
 	// grid-template-areas: 'header__sidebar' 'header__nav' 'header__label'
 	max-width: 100%
+	// height: 60px
 
 	+r(1430)
 		grid-template: 1fr minmax(75px, auto) minmax(40px, auto) / 1fr
@@ -737,6 +738,7 @@
 	&__wrap
 		background-color: $bg
 		padding: 30px
+		padding-top: 0
 
 		+r(767)
 			overflow: auto
@@ -889,8 +891,10 @@
 		align-items: center
 		min-height: 70px
 		padding: 0 50px
+		margin: 0 19px
 		margin-bottom: 4px
-		background-color: $accent
+		background: $accent
+		transform: skew(-30deg)
 		font-size: 24px
 		line-height: 1.2
 
@@ -901,13 +905,23 @@
 		+r(576)
 			padding: 0 15px
 
+		span
+			color: $title
+			font-weight: 700
+			transform: skew(30deg)
+			font-size: 18px
+
+		&_icon
+			transform: skew(30deg)
+			margin-right: 10px
+
 	&__item
 		display: flex
 		align-items: center
 		min-height: 70px
 		padding: 0px 50px
 		margin-bottom: 4px
-		background-color: #484848
+		background-color: #262626
 		font-size: 18px
 
 		+r(992)
@@ -925,8 +939,8 @@
 	display: flex
 	justify-content: space-between
 	gap: 30px
-	background-color: $bg
-	padding: 50px
+	background: #262626
+	padding: 30px
 	font-size: 18px
 
 	+r(1440)
@@ -944,6 +958,21 @@
 		margin-left: -15px
 		margin-right: -15px
 
+	&__header
+		display: flex
+		align-items: center
+		min-height: 70px
+		padding: 0 50px
+		margin: 0 19px
+		margin-bottom: 4px
+		background: $accent
+		transform: skew(-30deg)
+		font-size: 18px
+		line-height: 1.2
+
+	&__content
+		grid-gap: 10px
+
 	&__img
 		width: 29%
 
@@ -953,6 +982,21 @@
 		img
 			width: 100%
 			margin-bottom: 30px
+
+		.btn
+			background: $accent
+			transform: skew(-30deg)
+			max-width: 325px
+			margin: 0 25px
+			border: none
+
+			&:hover
+				background: $hover
+
+			span
+				color: $title
+				transform: skew(30deg)
+				font-weight: 700
 
 	&__desc
 		width: 68%
@@ -977,6 +1021,7 @@
 				align-items: center
 				margin-bottom: 13px
 
+
 				&::before
 					counter-increment: list
 					content: counter(list)
@@ -986,6 +1031,9 @@
 					width: 50px
 					height: 50px
 					border: 1px solid #fff
+					background: linear-gradient(180deg, #F5F5F5 0%, #BEB9B9 100%)
+					color: $title
+					font-weight: 700
 					border-radius: 50%
 					margin-right: 10px
 					flex-shrink: 0
@@ -1003,9 +1051,10 @@
 				margin: 30px 0
 
 	&__title
-		font-size: 42px
+		font-size: 18px
 		font-weight: 700
-		margin-bottom: 20px
+		color: $title
+		transform: skew(30deg)
 
 		+r(1200)
 			font-size: 36px
@@ -1017,19 +1066,18 @@
 
 
 .contacts
+	background: #262626
+	padding: 30px
+	width: 100%
 
 	&__map
 		position: relative
 		width: 100%
-		height: 530px
 		overflow: hidden
-		margin-bottom: 50px
 
 		img
-			position: absolute
-			left: 50%
-			top: 50%
-			transform: translate(-50%, -50%)
+			width: 100%
+			max-height: 500px
 			object-fit: cover
 
 	&__subtitle
