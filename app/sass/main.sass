@@ -1,12 +1,36 @@
 @import base
 
 // -----CONTAINER-----
-.wrapper
-	min-height: 100vh
+.container
 	width: 100%
 	max-width: 1750px
 	padding: 0 15px
 	margin: 0 auto
+
+	+r(1750)
+		max-width: 1430px
+
+	+r(1430)
+		max-width: 1200px
+
+	+r(1200)
+		max-width: 992px
+
+	+r(992)
+		max-width: 768px
+
+	+r(767)
+		max-width: 576px
+
+	+r(576)
+		max-width: 480px
+
+.wrapper
+	min-height: 100vh
+	width: 100%
+	// max-width: 1750px
+	// padding: 0 15px
+	// margin: 0 auto
 	display: grid
 	grid-template: minmax(100px, auto) 1fr minmax(100px, auto) / 1fr
 	grid-template-areas: 'header' 'main' 'footer'
@@ -21,12 +45,6 @@
 
 	+r(1430)
 		max-width: 1200px
-
-	+r(1200)
-		max-width: 992px
-
-	+r(1200)
-		max-width: 992px
 
 	+r(1200)
 		max-width: 992px
@@ -49,7 +67,7 @@
 	min-height: 60px
 	max-width: 300px
 	width: 100%
-	border: 1px solid $accent
+	border: 3px solid transparent
 	background-color: $accent
 	padding: 0 15px
 	font-size: 16px
@@ -61,16 +79,12 @@
 		min-height: 50px
 
 	&:hover
-		border: 1px solid $accent
-		background: $accent
-		color: #fff
-		box-shadow: 0px 0px 20px #DE0300
+		border: 3px solid #fff
+		background: $hover
 
 	&:active
 		border: 1px solid #fff
 		background: $accent
-		color: #fff
-		box-shadow: 0px 0px 20px #DE0300
 
 	&--min
 		min-height: 50px
@@ -204,17 +218,23 @@
 			+r(767)
 				display: none
 
+			li
+				display: flex
+				justify-content: center
+				align-items: center
+				height: 45px
+
 			a
 				display: flex
 				justify-content: center
 				align-items: center
 				background-color: $bg
-				min-height: 45px
-				min-width: 150px
+				// min-height: 45px
+				// min-width: 150px
 				padding: 3px 25px
 				text-align: center
 				max-width: 200px
-				border: 3px solid transparent
+				// border: 3px solid transparent
 
 				+r(992)
 					max-width: 100%
@@ -244,15 +264,17 @@
 			ul
 				position: absolute
 				top: 100%
+				left: -1px
 				display: none
-				width: 100%
+				width: 103%
 				box-shadow: 0 0 2px 0 rgba(#fff, .33)
 
 				li
 					border: 1px solid $border
+					height: 45px
+					align-self: center
 
 				a
-					min-height: 45px
 					background: $bg
 					color: $text
 					width: 100%
@@ -262,10 +284,41 @@
 						display: none
 
 					&:hover
-						color: $title
+						color: $text
 			a
 				min-width: 0
-				min-height: 45px
+
+
+		&_reg
+			background: $accent
+			transform: skew(-30deg)
+			min-height: 60px !important
+
+			&:hover
+				border-color: #fff
+				background: $hover
+
+			span
+				transform: skew(30deg)
+				color: $title
+				font-weight: 700
+
+		&_log
+			transform: skew(-30deg)
+			min-height: 60px !important
+			margin-left: 15px
+			+transition
+
+			span
+				transform: skew(30deg)
+				font-weight: 700
+
+			&:hover
+				background: $hover
+
+				span
+					color: $title
+
 
 	&__logo
 		display: block
@@ -337,7 +390,8 @@
 				min-height: 60px
 				color: $title
 				font-weight: 700
-				border: 3px solid transparent
+				border: none
+				// border: 3px solid transparent
 				transform: skew(-30deg)
 				+transition
 
@@ -355,7 +409,7 @@
 
 				&:hover
 					background: $hover
-					border-color: #fff
+					// border: 3px solid #fff
 
 		&_search
 			// display: grid
@@ -486,11 +540,11 @@
 .main
 	grid-area: main
 	display: grid
-	grid-template: 1fr / minmax(auto, 320px) 1fr
+	// grid-template: 1fr / minmax(auto, 320px) 1fr
 	grid-template-areas: 'main__sidebar' 'main__content'
 	grid-gap: 0 50px
 	align-items: flex-start
-	max-width: 100%
+	// max-width: 100%
 
 	+r(1430)
 		grid-template: 1fr / minmax(auto, 280px) 1fr
@@ -506,6 +560,7 @@
 		grid-area: main__sidebar
 		display: grid
 		grid-gap: 50px
+		grid-column: 2
 
 		+r(1430)
 			grid-gap: 25px
@@ -521,7 +576,7 @@
 	&__content
 		grid-area: main__content
 		grid-row: 1
-		grid-column: 2
+		grid-column: 1
 		display: grid
 		grid-gap: 50px
 		max-width: 100%
@@ -536,7 +591,6 @@
 
 .sidebar
 	&__block
-		background-color: #282627
 
 		+r(767)
 			grid-column: 1 / span 2
@@ -548,9 +602,12 @@
 	&__header
 		display: flex
 		align-items: center
-		background: #414143
-		padding: 15px 30px
-		font-size: 24px
+		background: $accent
+		transform: skew(-20deg)
+		padding: 10px 30px
+		margin: 0 16px 10px 16px
+		font-size: 18px
+		
 		line-height: 1
 
 		+r(767)
@@ -567,9 +624,10 @@
 			flex-shrink: 0
 			width: 50px
 			height: 50px
-			border: 1px solid rgba(#fff, .7)
 			margin-right: 15px
 			background-color: $accent
+			transform: skew(20deg)
+
 
 			+r(767)
 				width: 30px
@@ -579,9 +637,15 @@
 				max-width: 70%
 				max-height: 70%
 
+		p
+			transform: skew(20deg)
+			color: $title
+			font-weight: 700
+
 	&__item
 		display: block
-		padding: 20px 30px
+		background: #262626
+		padding: 15px 30px
 		border-top: 1px solid #505050
 
 		+r(767)
@@ -590,11 +654,14 @@
 		&:hover
 			background-color: #414143
 
+			span
+				color: $text
+
 		&_subtitle
 			display: block
 			font-weight: 700
 			font-size: 18px
-			color: $accent
+			color: $text
 			margin-bottom: 10px
 			line-height: 1.1
 
@@ -607,12 +674,13 @@
 		display: flex
 		justify-content: center
 		align-items: center
-		padding: 45px 20px
+		padding: 15px 20px
+		background: #262626
 
 		&_sale
 			color: $accent
 			line-height: 1.2
-			font-size: 52px
+			font-size: 40px
 			font-weight: 700
 		
 		&_btn
@@ -622,8 +690,8 @@
 .content
 	&__bunner
 		position: relative
-		padding: 160px 145px
-		height: auto
+		// padding: 160px 145px
+		min-height: 600px
 		overflow: hidden
 
 		+r(1430)
@@ -678,7 +746,9 @@
 		display: grid
 		grid-template: 1fr / minmax(80px, auto) 2fr 1fr 1fr minmax(120px, auto)
 		gap: 20px
-		background-color: $accent
+		background: $accent
+		transform: skew(-30deg)
+		margin: 0 19px
 		margin-bottom: 4px
 		padding-right: 20px
 		font-size: 24px
@@ -699,6 +769,10 @@
 
 		p
 			padding: 20px 0
+			transform: skew(30deg)
+			font-size: 16px
+			color: $title
+			font-weight: 700
 
 	&__table
 		overflow: auto
@@ -716,7 +790,7 @@
 			align-items: center
 			background-color: $accent
 			margin-bottom: 4px
-			background: linear-gradient(90.35deg, #484848 7.73%, #474747 104.43%)
+			background: #262626
 			line-height: 1
 			padding-right: 20px
 			min-height: 60px
@@ -738,7 +812,7 @@
 				font-size: 16px
 
 		&_number
-			font-size: 24px
+			font-size: 18px
 			font-weight: 700
 
 			+r(1430)
@@ -751,7 +825,7 @@
 				font-size: 16px
 
 		&_price
-			font-size: 32px
+			font-size: 26px
 			font-weight: 700
 
 			+r(1430)
@@ -762,6 +836,24 @@
 
 			+r(992)
 				font-size: 16px
+
+			span
+				color: $text
+				margin-right: 10px
+				position: relative
+				opacity: .3
+
+				&::after
+					content: ""
+					display: block
+					position: absolute
+					left: 0
+					top: 50%
+					color: #fff
+					width: 100%
+					height: 0
+					border-bottom: 2px solid $title
+					transform: rotate(-6deg)
 
 		&_title
 			display: flex
@@ -780,6 +872,15 @@
 
 			+r(992)
 				max-height: 730px
+
+		&_btn
+			background: $accent
+			transform: skew(-30deg)
+
+			span
+				color: $title
+				transform: skew(30deg)
+				font-weight: 700
 
 
 .services
@@ -1150,6 +1251,7 @@
 			min-height: 70px
 			padding: 5px 30px
 			font-size: 22px
+			background: #262626
 
 			+r(1720)
 				font-size: 18px
@@ -1209,29 +1311,48 @@
 
 .footer
 	grid-area: footer
-	background-color: #282627
-	display: grid
-	grid-template: 1fr / minmax(auto, 150px) 1fr 1fr 1fr minmax(auto, 150px)
-	grid-template-areas: 'footer__logo' 'empty' 'footer__nav' 'empty' 'footer__sidebar'
-	grid-gap: 15px
-	align-items: center
-	padding: 50px
+	background-color: $bg
+	border-top: 1px solid $border
+	display: flex
+	align-items: flex-end
+	justify-content: center
+	// display: grid
+	// grid-template: 1fr / minmax(auto, 150px) 1fr 1fr 1fr minmax(auto, 150px)
+	// grid-template-areas: 'footer__logo' 'empty' 'footer__nav' 'empty' 'footer__sidebar'
+	// grid-gap: 15px
+	// padding: 50px
 	z-index: 2
 	max-width: 100%
 
-	+r(1430)
-		padding: 25px
+	// +r(1430)
+	// 	padding: 25px
 
-	+r(992)
-		grid-template: 1fr / minmax(auto, 150px) 1fr 1fr
-		grid-template-areas: 'footer__logo' 'footer__nav' 'footer__sidebar'
-		align-items: flex-end
+	// +r(992)
+	// 	grid-template: 1fr / minmax(auto, 150px) 1fr 1fr
+	// 	grid-template-areas: 'footer__logo' 'footer__nav' 'footer__sidebar'
+	// 	align-items: flex-end
 
-	+r(767)
-		grid-template-columns: auto
+	// +r(767)
+	// 	grid-template-columns: auto
+
+	&__container
+		display: flex
+		// justify-content: space-between
+		align-items: center
+		gap: 70px
+
+	&__menu
+		display: flex
+		align-items: center
+		justify-content: space-between
+		width: 100%
 
 	&__logo
 		max-width: 150px
+		// margin-right: 70px
+		
+		img
+			width: 100%
 
 	&__nav
 		grid-area: footer__nav
@@ -1247,10 +1368,11 @@
 			align-items: flex-start
 
 		&_menu
-			display: grid
-			grid-auto-flow: column
-			grid-gap: 85px
-			text-align: center
+			@extend .header__nav_menu
+			// display: grid
+			// grid-auto-flow: column
+			// grid-gap: 85px
+			// text-align: center
 
 			+r(1430)
 				grid-gap: 25px
@@ -1259,6 +1381,9 @@
 				grid-auto-flow: row
 				grid-gap: 10px
 				text-align: left
+
+			span
+				transform: skew(30deg)
 
 	&__sidebar
 		&_nav
@@ -1279,6 +1404,7 @@
 
 		&_menu
 			@extend .header__sidebar_menu
+
 			+r(767)
 				display: block
 
@@ -1627,10 +1753,15 @@
 		position: relative
 		cursor: pointer
 		padding-right: 70px
+		background: $accent
 
 		+r(1440)
 			padding-right: 30px
 			padding-left: 40px
+
+		p
+			font-size: 18px
+			font-weight: 700
 
 		span
 			+transition
