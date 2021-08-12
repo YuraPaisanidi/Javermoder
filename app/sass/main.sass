@@ -28,9 +28,6 @@
 .wrapper
 	min-height: 100vh
 	width: 100%
-	// max-width: 1750px
-	// padding: 0 15px
-	// margin: 0 auto
 	display: grid
 	grid-template: minmax(60px, auto) 1fr minmax(100px, auto) / 1fr
 	grid-template-areas: 'header' 'main' 'footer'
@@ -39,24 +36,6 @@
 
 	+r(1430)
 		grid-gap: 25px
-
-	// +r(1750)
-	// 	max-width: 1430px
-
-	// +r(1430)
-	// 	max-width: 1200px
-
-	// +r(1200)
-	// 	max-width: 992px
-
-	// +r(992)
-	// 	max-width: 768px
-
-	// +r(767)
-	// 	max-width: 576px
-
-	// +r(576)
-	// 	max-width: 480px
 
 // -----BUTTON-----
 .btn
@@ -106,7 +85,7 @@
 	height: 18px
 	outline: none
 
-	+r(992)
+	+r(1200)
 		display: flex
 
 	&__item
@@ -173,11 +152,7 @@
 
 .header
 	grid-area: header
-	// display: grid
-	// grid-template: 1fr minmax(100px, auto) minmax(60px, auto) / 1fr
-	// grid-template-areas: 'header__sidebar' 'header__nav' 'header__label'
 	max-width: 100%
-	// height: 60px
 
 	+r(1430)
 		grid-template: 1fr minmax(75px, auto) minmax(40px, auto) / 1fr
@@ -198,14 +173,13 @@
 		&_nav
 			display: flex
 			align-items: center
-			// justify-items: end
 			justify-content: space-between
 			gap: 10px
 
-			+r(992)
-				grid-template-columns: 1fr minmax(auto, 30px)
-				grid-gap: 30px
+			+r(1200)
+				display: flex
 				align-items: center
+				justify-content: flex-end
 
 			+r(767)
 				grid-template-columns: 1fr
@@ -217,7 +191,7 @@
 			grid-auto-flow: column
 			grid-gap: 3px
 
-			+r(767)
+			+r(1200)
 				display: none
 
 			li
@@ -231,18 +205,15 @@
 				justify-content: center
 				align-items: center
 				background-color: $bg
-				// min-height: 45px
-				// min-width: 150px
 				padding: 3px 25px
 				text-align: center
 				max-width: 200px
-				// border: 3px solid transparent
 
 				+r(1750)
 					max-width: 120px
 					font-size: 14px
 
-				+r(992)
+				+r(1200)
 					max-width: 100%
 
 				&:hover
@@ -346,7 +317,7 @@
 		+r(1430)
 			grid-template: 1fr / 1fr minmax(350px, auto)
 
-		+r(992)
+		+r(1200)
 			position: fixed
 			left: 100%
 			top: 0
@@ -370,11 +341,12 @@
 			grid-auto-flow: column
 			grid-gap: 3px
 
-			+r(992)
+			+r(1200)
 				display: flex
 				flex-direction: column
 				gap: 10px
 				order: 1
+				display: none
 
 			ul
 				height: 100%
@@ -398,7 +370,6 @@
 				font-weight: 700
 				border: none
 				font-size: 14px
-				// border: 3px solid transparent
 				transform: skew(-30deg)
 				+transition
 
@@ -416,15 +387,43 @@
 
 				&:hover
 					background: $hover
-					// border: 3px solid #fff
 
 				span
 					transform: skew(30deg)
 
+			&--mobile
+				display: none
+
+				+r(1200)
+					display: flex
+					flex-direction: column
+					gap: 10px
+					margin-bottom: 30px
+
+					li
+						margin: 0 11px
+
+					a
+						display: flex
+						justify-content: flex-start
+						align-items: center
+						background: $accent
+						height: 100%
+						width: 100%
+						padding: 0 25px
+						text-align: center
+						min-height: 60px
+						color: $title
+						font-weight: 700
+						border: none
+						font-size: 14px
+						transform: skew(-20deg)
+						+transition
+
+						span
+							transform: skew(20deg)
+
 		&_search
-			// display: grid
-			// grid-template: 1fr / 2fr minmax(auto, 120px)
-			// grid-auto-flow: column
 			margin-left: 20px
 			padding: 10px 15px
 			background-color: $bg
@@ -436,9 +435,10 @@
 				grid-template: 1fr / 2fr minmax(auto, 90px)
 				padding: 15px
 
-			+r(992)
+			+r(1200)
 				grid-template: 1fr 1fr / 1fr
 				grid-gap: 10px
+				display: none
 
 			div
 				position: relative
@@ -476,6 +476,48 @@
 				&:hover
 					color: $text
 					box-shadow: 0px 0px 20px #DE0300
+			
+			&--mobile
+				display: none
+
+				+r(1200)
+					display: flex
+					flex-direction: column
+					gap: 10px
+
+				div
+					position: relative
+
+				input
+					min-height: 50px
+					width: 100%
+					padding-left: 40px
+
+				label
+					position: absolute
+					top: 50%
+					left: 20px
+					transform: translate(-50%, -50%)
+					width: 20px
+					height: 20px
+					background-image: url(../img/header__search1.svg)
+					z-index: 1
+					margin-bottom: 0
+					+cover
+
+				button
+					min-height: 50px
+					background: $accent
+					max-width: 240px
+					color: $title
+					font-weight: 700
+					transform: skew(-20deg)
+					margin: 0 11px
+
+					p
+						transform: skew(20deg) !important
+
+
 
 		&_submenu
 			@extend .header__sidebar_submenu
@@ -495,12 +537,15 @@
 						min-height: 50px
 						font-size: 14px
 
+			&--mobile
+				max-width: 100%
+
 		&--mobile
 
 			&_header
 				display: none
 
-				+r(992)
+				+r(1200)
 					display: flex
 					justify-content: space-between
 					align-items: center
@@ -513,16 +558,33 @@
 			&_sidebar
 				display: none
 
-				+r(992)
+				+r(1200)
 					display: flex
 					flex-direction: column
 					justify-content: space-between
 					gap: 10px
 					width: 100%
 					order: 2
-				
+
+				li
+					min-height: 60px
+					max-width: 100%
+					border: none
+					margin: 0 11px
+
 				a
+					display: flex
+					align-items: center
 					justify-content: flex-start
+					background: $accent
+					height: 100%
+					width: 100%
+					transform: skew(-20deg)
+					color: $title
+					font-weight: 700
+
+					span,img
+						transform: skew(20deg)
 
 		&--active
 			left: 0 !important
@@ -547,19 +609,19 @@
 			&:hover
 				transform: scale(1.05)
 
+		+r(1200)
+			display: none
+
 
 .main
 	grid-area: main
 	display: grid
-	// grid-template: minmax(auto, 340px) 1fr / 1fr
 	grid-template-areas: 'main__sidebar' 'main__content'
 	grid-gap: 0 50px
 	align-items: flex-start
 	// max-width: 100%
 
 	+r(1430)
-		// grid-template: minmax(auto, 280px) 1fr / 1fr
-		// grid-template-areas: 'main__sidebar' 'main__content'
 		grid-gap: 0 25px
 
 	+r(992)
@@ -693,6 +755,9 @@
 			line-height: 1.2
 			font-size: 40px
 			font-weight: 700
+
+			+r(767)
+				font-size: 30px
 		
 		&_btn
 			min-width: 300px
@@ -701,15 +766,11 @@
 .content
 	&__bunner
 		position: relative
-		// padding: 160px 145px
 		min-height: 600px
 		overflow: hidden
 
-		+r(1430)
-			padding: 160px 50px
-
-		+r(480)
-			padding: 30px 20px 290px
+		+r(992)
+			min-height: 350px
 
 		&_img
 			position: absolute
@@ -782,6 +843,9 @@
 		+r(767)
 			min-width: 750px
 
+		+r(576)
+			overflow: auto
+
 		p
 			padding: 20px 0
 			transform: skew(30deg)
@@ -794,7 +858,6 @@
 		max-height: 665px
 
 		+r(767)
-			overflow: inherit
 			max-height: 810px
 			min-width: 750px
 
@@ -881,6 +944,9 @@
 			font-size: 18px
 			color: #000
 			text-align: center
+
+			+r(767)
+				margin-top: 0	
 
 		&--max
 			max-height: 1150px
@@ -1003,6 +1069,9 @@
 			margin: 0 25px
 			border: none
 
+			+r(480)
+				margin: 0
+
 			&:hover
 				background: $hover
 
@@ -1072,6 +1141,9 @@
 		+r(1200)
 			font-size: 36px
 
+		+r(992)
+			font-size: 24px
+
 	&__subtitle
 		text-transform: uppercase
 		font-size: 24px
@@ -1131,22 +1203,33 @@
 	&__logo
 		display: none
 
-		+r(992)
+		+r(1200)
 			display: block
 
 	&__header
 		grid-template-rows: 1fr
 
-		+r(992)
+		+r(1200)
 			grid-template: 1fr / 1fr 1fr
 			align-items: center
+
+		+r(480)
+			max-width: 320px
 
 		.hamburger
 			margin-right: 0
 			margin-left: auto
 
+		.container
+
+			+r(1200)
+				display: flex
+				align-items: center
+				padding-top: 10px
+				justify-content: space-between
+
 	&__menu
-		+r(992)
+		+r(1200)
 			display: none
 
 		ul
@@ -1173,7 +1256,7 @@
 				background: $hover
 				color: $title
 
-			+r(992)
+			+r(1200)
 				min-height: 60px
 				font-size: 16px
 				padding: 15px 20px
@@ -1195,7 +1278,7 @@
 		&--mobile
 			display: none
 
-			+r(992)
+			+r(1200)
 				display: block
 				width: 100%
 
@@ -1206,7 +1289,7 @@
 		min-width: 340px
 		grid-row: 1
 
-		+r(992)
+		+r(1200)
 			position: fixed
 			left: 100%
 			top: 0
@@ -1232,7 +1315,7 @@
 		&_nav
 			justify-content: flex-end
 
-			+r(992)
+			+r(1200)
 				width: 100%
 				grid-gap: 0
 				grid-template: 1fr / 1fr
@@ -1243,12 +1326,16 @@
 				order: 1
 
 		&_menu
-			+r(992)
+			+r(1200)
 				grid-auto-flow: row
+				grid-gap: 10px
 				width: 100%
-
-			+r(767)
 				display: grid
+
+			li
+				+r(1200)
+					height: auto
+					min-height: auto
 
 			a
 				background: $accent
@@ -1258,10 +1345,11 @@
 				font-weight: 700
 				min-width: 250px
 
-				+r(992)
+				+r(1200)
 					text-align: left
 					justify-content: flex-start
 					min-height: 60px
+					width: 100%
 
 				span,img
 					transform: skew(30deg)
@@ -1283,7 +1371,6 @@
 					border: none
 					min-height: 60px
 
-
 				a
 					transform: skew(0)
 					border: 1px solid $border
@@ -1293,18 +1380,22 @@
 						color: $title
 
 	&__main
-		// +r(576)
-		// 	margin-left: -15px
-		// 	margin-right: -15px
-		// 	min-width: 100%
+
+		+r(1200)
+			grid-template-columns: 1fr
+			padding: 0
 
 	&__content
 		background-color: $bg
 		grid-column: 2
-		grid-gap: 0px
+		grid-gap: 10px
 
 		+r(1200)
-			padding: 30px
+			padding: 0 5px
+			grid-column: 1
+
+		+r(576)
+			padding: 0 15px
 
 		&_wrap
 			overflow: auto
@@ -1352,9 +1443,6 @@
 			p
 				transform: skew(20deg)
 
-			// a
-				// color: $title
-
 		&_header
 			grid-auto-flow: column
 			grid-template: inherit
@@ -1377,8 +1465,6 @@
 			margin-bottom: 30px
 
 	&__table
-		// overflow: inherit
-		// max-height: fit-content
 		min-width: 900px
 		width: 100%
 
@@ -1422,11 +1508,10 @@
 			grid-template-columns: repeat(2, 1fr)
 
 	&__form
-		// max-width: 520px
 		background: #262626
 		padding: 30px 40px
 
-		+r(992)
+		+r(1200)
 			max-width: 100%
 
 		&_line
@@ -1440,6 +1525,9 @@
 				border: none
 				margin: 0 11px
 				min-width: 150px
+
+				+r(480)
+					margin: 0
 
 				span
 					transform: skew(20deg)
@@ -1471,6 +1559,7 @@
 			p
 				transform: skew(0)
 
+
 .footer
 	grid-area: footer
 	background-color: $bg
@@ -1478,30 +1567,22 @@
 	display: flex
 	align-items: flex-end
 	justify-content: center
-	// display: grid
-	// grid-template: 1fr / minmax(auto, 150px) 1fr 1fr 1fr minmax(auto, 150px)
-	// grid-template-areas: 'footer__logo' 'empty' 'footer__nav' 'empty' 'footer__sidebar'
-	// grid-gap: 15px
-	// padding: 50px
 	z-index: 2
 	max-width: 100%
 
-	// +r(1430)
-	// 	padding: 25px
-
-	// +r(992)
-	// 	grid-template: 1fr / minmax(auto, 150px) 1fr 1fr
-	// 	grid-template-areas: 'footer__logo' 'footer__nav' 'footer__sidebar'
-	// 	align-items: flex-end
-
-	// +r(767)
-	// 	grid-template-columns: auto
+	+r(767)
+		align-items: center
 
 	&__container
 		display: flex
-		// justify-content: space-between
 		align-items: center
 		gap: 70px
+
+		+r(1200)
+			gap: 30px
+		
+		+r(480)
+			gap: 0
 
 	&__menu
 		display: flex
@@ -1511,8 +1592,8 @@
 
 	&__logo
 		max-width: 150px
-		// margin-right: 70px
-		
+		min-width: 100px
+
 		img
 			width: 100%
 
@@ -1531,13 +1612,6 @@
 
 		&_menu
 			@extend .header__nav_menu
-			// display: grid
-			// grid-auto-flow: column
-			// grid-gap: 85px
-			// text-align: center
-
-			// +r(1430)
-			// 	grid-gap: 25px
 
 			+r(767)
 				grid-auto-flow: row
@@ -1567,8 +1641,17 @@
 		&_menu
 			@extend .header__sidebar_menu
 
-			+r(767)
-				display: block
+			+r(1200)
+				display: flex
+
+			a
+				
+				+r(767)
+					max-width: 100px
+
+				+r(480)
+					min-height: 40px !important
+					padding: 3px 10px !important
 
 		&_submenu
 			@extend .header__sidebar_submenu
@@ -1918,6 +2001,9 @@
 	margin-bottom: 10px
 	border-bottom: 1px solid #161B21
 
+	+r(767)
+		margin-bottom: 0
+
 	&:last-child
 		margin-bottom: 0
 
@@ -1959,6 +2045,9 @@
 		overflow: hidden
 		width: 100%
 		height: 0
+
+		+r(1200)
+			overflow: scroll
 
 	&--active
 

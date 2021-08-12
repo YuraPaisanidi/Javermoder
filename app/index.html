@@ -20,14 +20,84 @@
 
 		<header class="header">
 			<div class="container">
-							<div class="header__sidebar">
-				<a href="/" class="header__logo">
-					<img src="img/logo.svg" alt="">
-				</a>
-				<nav class="header__sidebar_nav">
-					<ul class="header__nav_menu">
+				<div class="header__sidebar">
+					<a href="/" class="header__logo">
+						<img src="img/logo.svg" alt="">
+					</a>
+					<nav class="header__sidebar_nav">
+						<ul class="header__nav_menu">
+							<li><a href="#"><span>Главная</span></a></li>
+							<li class="header__nav_submenu">
+								<a href="#"><span>Категории</span></a>
+								<ul>
+									<li><a href="#">Категории</a></li>
+									<li><a href="#">Категории</a></li>
+									<li><a href="#">Категории</a></li>
+									<li><a href="#">Категории</a></li>
+									<li><a href="#">Категории</a></li>
+									<li><a href="#">Категории</a></li>
+								</ul>
+							</li>
+							<li><a href="#"><span>Услуги</span></a></li>
+							<li><a href="#"><span>Правила</span></a></li>
+							<li><a href="#"><span>Отзывы</span></a></li>
+							<li><a href="#"><span>Контакты</span></a></li>
+		
+						</ul>
+						<form class="header__nav_search">
+							<div>
+								<label for="header__search"></label>
+								<input id="header__search" type="search" placeholder="Поиск">
+							</div>
+							<!-- <button>Search</button> -->
+						</form>
+						<div class="header__lang">
+							<a href="#" class="header__lang_link">
+								<img src="img/header_telegram.svg" alt="">
+							</a>
+							<a href="#" class="header__lang_link">
+								<img src="img/header_telegram.svg" alt="">
+							</a>
+						</div>
+						<ul class="header__sidebar_menu">
+							<li class="header__sidebar_submenu">
+								<a href="javascript: void(0)">RU</a>
+								<ul>
+									<li><a href="#">EN</a></li>
+								</ul>
+							</li>
+							<li><a href="#" class="header__sidebar_log"><span>Вход</span></a></li>
+							<li><a href="#" class="header__sidebar_reg"><span>Регистрация</span></a></li>
+						</ul>
+						<button class="hamburger" type="button">
+							<span class="hamburger__item"></span>
+						</button>
+					</nav>
+				</div>
+		
+				<nav class="header__nav menu">
+					<div class="header__nav--mobile_header">
+						<p class="header__nav--mobile_title">Меню</p>
+						<button class="hamburger hamburger--active" type="button">
+							<span class="hamburger__item"></span>
+						</button>
+					</div>
+
+					<form class="header__nav_search--mobile">
+						<div>
+							<label for="header__search"></label>
+							<input id="header__search" type="search">
+						</div>
+						<button><p>Поиск</p></button>
+					</form>
+
+					<ul class="header__nav_menu--mobile">
 						<li><a href="#"><span>Главная</span></a></li>
-						<li class="header__nav_submenu">
+						<li><a href="#"><span>Услуги</span></a></li>
+						<li><a href="#"><span>Правила</span></a></li>
+						<li><a href="#"><span>Отзывы</span></a></li>
+						<li><a href="#"><span>Контакты</span></a></li>
+						<li class="header__nav_submenu header__nav_submenu--mobile">
 							<a href="#"><span>Категории</span></a>
 							<ul>
 								<li><a href="#">Категории</a></li>
@@ -38,67 +108,35 @@
 								<li><a href="#">Категории</a></li>
 							</ul>
 						</li>
-						<li><a href="#"><span>Услуги</span></a></li>
-						<li><a href="#"><span>Правила</span></a></li>
-						<li><a href="#"><span>Отзывы</span></a></li>
-						<li><a href="#"><span>Контакты</span></a></li>
-
 					</ul>
-					<form class="header__nav_search">
-						<div>
-							<label for="header__search"></label>
-							<input id="header__search" type="search" placeholder="Поиск">
-						</div>
-						<!-- <button>Search</button> -->
-					</form>
-					<div class="header__lang">
-						<a href="#" class="header__lang_link">
-							<img src="img/header_telegram.svg" alt="">
-						</a>
-						<a href="#" class="header__lang_link">
-							<img src="img/header_telegram.svg" alt="">
-						</a>
-					</div>
-					<ul class="header__sidebar_menu">
+
+					<ul class="header__nav--mobile_sidebar header__sidebar_menu">
+						<li>
+							<a href="#">
+								<img src="img/enter.svg" alt="">
+								<span>Вход</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="img/registr.svg" alt="">
+								<span>Регистрация</span>
+							</a>
+						</li>
 						<li class="header__sidebar_submenu">
-							<a href="javascript: void(0)">RU</a>
+							<a href="javascript: void(0)"><span>RUS</span></a>
 							<ul>
-								<li><a href="#">EN</a></li>
+								<li><a href="#"><span>ENG</span></a></li>
+								<li><a href="#"><span>ENG</span></a></li>
+								<li><a href="#"><span>ENG</span></a></li>
+								<li><a href="#"><span>ENG</span></a></li>
 							</ul>
 						</li>
-						<li><a href="#" class="header__sidebar_log"><span>Вход</span></a></li>
-						<li><a href="#" class="header__sidebar_reg"><span>Регистрация</span></a></li>
 					</ul>
-					<button class="hamburger" type="button">
-						<span class="hamburger__item"></span>
-					</button>
 				</nav>
 			</div>
-
-			<nav class="header__nav menu">
-				<div class="header__nav--mobile_header">
-					<p class="header__nav--mobile_title">Меню</p>
-					<button class="hamburger hamburger--active" type="button">
-						<span class="hamburger__item"></span>
-					</button>
-				</div>
-				<ul class="header__nav--mobile_sidebar header__sidebar_menu">
-					<li class="header__sidebar_submenu">
-						<a href="javascript: void(0)">RUS</a>
-						<ul>
-							<li><a href="#">ENG</a></li>
-							<li><a href="#">ENG</a></li>
-							<li><a href="#">ENG</a></li>
-							<li><a href="#">ENG</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Вход</a></li>
-					<li><a href="#">Регистрация</a></li>
-				</ul>
-			</nav>
-			</div>
-
-
+		
+		
 			<div class="content__bunner">
 				<picture>
 					<source srcset="img/content__bunner3.jpg" media="(max-width: 480px)">
