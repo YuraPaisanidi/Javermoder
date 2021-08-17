@@ -1064,20 +1064,19 @@
 
 		.btn
 			background: $accent
-			transform: skew(-30deg)
+			transform: skew(-20deg)
 			max-width: 325px
-			margin: 0 25px
 			border: none
 
-			+r(480)
-				margin: 0
+			+r(767)
+				max-width: 100%
 
 			&:hover
 				background: $hover
 
 			span
 				color: $title
-				transform: skew(30deg)
+				transform: skew(20deg)
 				font-weight: 700
 
 	&__desc
@@ -1159,6 +1158,7 @@
 		position: relative
 		width: 100%
 		overflow: hidden
+		margin-bottom: 30px
 
 		img
 			width: 100%
@@ -1405,7 +1405,7 @@
 			display: flex
 			justify-content: space-between
 			align-items: center
-			padding: 5px 30px
+			padding: 5px 40px
 			color: $title
 			transform: skew(-20deg)
 			min-height: 60px
@@ -1420,6 +1420,13 @@
 
 			p
 				transform: skew(20deg)
+			
+				span
+					width: 15px
+					height: 15px
+					border-top: 3px solid $bg
+					border-left: 3px solid $bg
+					left: -25px
 
 			a
 				color: $title

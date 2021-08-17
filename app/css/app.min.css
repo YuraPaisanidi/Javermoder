@@ -2246,17 +2246,16 @@ textarea {
   background: -webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#beb9b9));
   background: -o-linear-gradient(top,#f5f5f5 0,#beb9b9 100%);
   background: linear-gradient(180deg,#f5f5f5 0,#beb9b9 100%);
-  -webkit-transform: skew(-30deg);
-  -ms-transform: skew(-30deg);
-  transform: skew(-30deg);
+  -webkit-transform: skew(-20deg);
+  -ms-transform: skew(-20deg);
+  transform: skew(-20deg);
   max-width: 325px;
-  margin: 0 25px;
   border: none
 }
-@media only screen and (max-width:480px) {
+@media only screen and (max-width:767px) {
   .article__img .btn,
   .article__img .form__btn_button {
-    margin: 0
+    max-width: 100%
   }
 }
 .article__img .btn:hover,
@@ -2267,9 +2266,9 @@ textarea {
 .article__img .btn span,
 .article__img .form__btn_button span {
   color: #1f1c1c;
-  -webkit-transform: skew(30deg);
-  -ms-transform: skew(30deg);
-  transform: skew(30deg);
+  -webkit-transform: skew(20deg);
+  -ms-transform: skew(20deg);
+  transform: skew(20deg);
   font-weight: 700
 }
 .article__desc {
@@ -2371,7 +2370,8 @@ textarea {
 .contacts__map {
   position: relative;
   width: 100%;
-  overflow: hidden
+  overflow: hidden;
+  margin-bottom: 30px
 }
 .contacts__map img {
   width: 100%;
@@ -2720,7 +2720,7 @@ textarea {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 5px 30px;
+  padding: 5px 40px;
   color: #1f1c1c;
   -webkit-transform: skew(-20deg);
   -ms-transform: skew(-20deg);
@@ -2743,6 +2743,13 @@ textarea {
   -webkit-transform: skew(20deg);
   -ms-transform: skew(20deg);
   transform: skew(20deg)
+}
+.profile__content_sale p span {
+  width: 15px;
+  height: 15px;
+  border-top: 3px solid #0b0a0a;
+  border-left: 3px solid #0b0a0a;
+  left: -25px
 }
 .profile__content_sale a {
   color: #1f1c1c
