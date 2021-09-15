@@ -3086,8 +3086,17 @@ textarea {
 .footer__nav_submenu ul a:hover {
   color: #fff
 }
-.footer__nav_submenu--profile ul {
-  top: 55%
+.footer__nav_submenu--addticket ul {
+  top: 60%
+}
+.footer__nav_submenu--index ul {
+  top: 56%
+}
+.footer__nav_submenu--buy ul {
+  top: 56%
+}
+.footer__nav_submenu--referral ul {
+  top: 61%
 }
 .footer__sidebar_nav {
   grid-area: footer__sidebar;
