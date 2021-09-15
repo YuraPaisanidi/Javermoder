@@ -634,11 +634,13 @@
 		display: grid
 		grid-gap: 50px
 		grid-column: 2
+		max-width: 340px
 
 		+r(1430)
 			grid-gap: 25px
 
 		+r(992)
+			max-width: 100%
 			grid-row: 2
 			grid-column: 1
 			grid-template: 1fr / 1fr 1fr
@@ -1627,6 +1629,45 @@
 
 			span
 				transform: skew(30deg)
+
+		&_submenu
+
+			&:hover
+				ul
+					visibility: visible
+					z-index: 100
+
+			ul
+				position: absolute
+				top: 79%
+				visibility: hidden
+				width: 100%
+				max-width: 150px
+				box-shadow: 0 0 2px 0 rgba(#fff, .33)
+				height: auto
+				+transition
+
+				li
+					max-width: 100%
+
+				a
+					background: $bg
+					color: $text
+					width: 100%
+					max-width: 100%
+					transform: skew(0deg)
+					+transition
+
+					&::after
+						display: none
+
+					&:hover
+						color: $text
+
+			&--profile
+					ul
+						top: 55%
+
 
 	&__sidebar
 		&_nav

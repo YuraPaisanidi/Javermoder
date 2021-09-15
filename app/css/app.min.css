@@ -1626,7 +1626,8 @@ textarea {
   display: grid;
   grid-gap: 50px;
   -ms-grid-column: 2;
-  grid-column: 2
+  grid-column: 2;
+  max-width: 340px
 }
 @media only screen and (max-width:1430px) {
   .main__sidebar {
@@ -1635,6 +1636,7 @@ textarea {
 }
 @media only screen and (max-width:992px) {
   .main__sidebar {
+    max-width: 100%;
     -ms-grid-row: 2;
     grid-row: 2;
     -ms-grid-column: 1;
@@ -3045,6 +3047,47 @@ textarea {
   -webkit-transform: skew(30deg);
   -ms-transform: skew(30deg);
   transform: skew(30deg)
+}
+.footer__nav_submenu:hover ul {
+  visibility: visible;
+  z-index: 100
+}
+.footer__nav_submenu ul {
+  position: absolute;
+  top: 79%;
+  visibility: hidden;
+  width: 100%;
+  max-width: 150px;
+  -webkit-box-shadow: 0 0 2px 0 rgba(255,255,255,.33);
+  box-shadow: 0 0 2px 0 rgba(255,255,255,.33);
+  height: auto;
+  -webkit-transition: all .6s;
+  -o-transition: all .6s;
+  transition: all .6s
+}
+.footer__nav_submenu ul li {
+  max-width: 100%
+}
+.footer__nav_submenu ul a {
+  background: #0b0a0a;
+  color: #fff;
+  width: 100%;
+  max-width: 100%;
+  -webkit-transform: skew(0);
+  -ms-transform: skew(0);
+  transform: skew(0);
+  -webkit-transition: all .6s;
+  -o-transition: all .6s;
+  transition: all .6s
+}
+.footer__nav_submenu ul a::after {
+  display: none
+}
+.footer__nav_submenu ul a:hover {
+  color: #fff
+}
+.footer__nav_submenu--profile ul {
+  top: 55%
 }
 .footer__sidebar_nav {
   grid-area: footer__sidebar;
