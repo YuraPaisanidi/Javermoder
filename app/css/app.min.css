@@ -605,6 +605,12 @@ textarea:required:valid {
   box-shadow: none;
   -webkit-appearance: none
 }
+input:focus,
+option:focus,
+select:focus,
+textarea:focus {
+  border: 2px solid #e5c110
+}
 input::-webkit-input-placeholder,
 option::-webkit-input-placeholder,
 select::-webkit-input-placeholder,
@@ -1440,6 +1446,26 @@ textarea {
 .header__nav_submenu ul {
   min-width: 200px;
   left: -17px
+}
+.header__nav_submenu ul li {
+  background: #0b0a0a;
+  border: none;
+  width: 100%;
+  max-width: 100%;
+  height: auto
+}
+.header__nav_submenu ul li a {
+  width: 100%;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center
 }
 .header__nav_submenu ul a {
   -webkit-box-pack: start;
